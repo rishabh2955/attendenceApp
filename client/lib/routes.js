@@ -1,0 +1,46 @@
+
+//code for login redirects//////////////////////////////////////
+////////////////////////////////////////////////////////////////
+
+	Accounts.onLogin(function(){
+		FlowRouter.go('dashboard');
+		$('.modal-backdrop').remove();
+	});
+	
+	Accounts.onLogout(function(){
+		FlowRouter.go('home')
+	});
+//login logout redirects ends //////////////////////////////////
+////////////////////////////////////////////////////////////////
+
+//Routing //////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+FlowRouter.route('/',{
+	name:'home',
+	action ()
+	{	
+		if(Meteor.userId())
+			FlowRouter.go('Dashboard');
+		BlazeLayout.render('Home');
+	}
+});
+
+FlowRouter.route('/Dashboard',{
+	name:"dashboard",
+	action()
+	{
+		BlazeLayout.render('Mainlayout');
+	}
+});
+
+FlowRouter.route('/Instructor',{
+	name:"Instructor",
+	action()
+	{
+		BlazeLayout.render('MainLayout',{
+			
+		});
+	}
+});
+//Routing Ends /////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
