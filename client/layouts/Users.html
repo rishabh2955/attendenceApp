@@ -1,24 +1,46 @@
 <Template name = "Users">
-	<div class="container">
-		<div class="row">
-			<div class="user-wrapper">
-				<table>
-					<tr>
-						<th>User Id</th>
-						<th>Email</th>
-						<th>Presents</th>
-					</tr>
-
-					{{#each user}}
-				
-					<tr>
-						<td>{{profile.firstname}}</td>	
-						<td>{{useremail}}</td>
-					</tr>
-					{{/each}}
-
-				</table>
-			</div>	
-		</div>	
+<div class="container">
+	<div class="row">
+		<div class="user-wrapper">
+			<div class="row">
+				<div class="name-wrapper col-md-3">
+					<span class="head">Name</span>
+				</div>
+				<div class="email-wrapper col-md-3">
+					<span class="head">email</span>
+				</div>
+				<div class="email-wrapper col-md-3">
+					<span class="head">Rating</span>
+				</div>
+				<div class="email-wrapper col-md-3">
+					<span class="head">Remark</span>
+					<button class="btn btn-primary">Enter Remark</button>
+				</div>
+			</div>
+		</div>
 	</div>
+	{{#each user}}
+		{{#if student}}
+			<div class="row">
+				<div class="user-wrapper">
+					<div class="row">
+						<div class="name-wrapper col-md-3">
+							<span class="head">{{profile.firstname}}</span>
+						</div>
+						<div class="email-wrapper col-md-3">
+							<span class="head">{{userEmail}}</span>
+						</div>
+						<div class="email-wrapper col-md-3">
+							<span class="head">{{>starsRating mutable=true class="js-rate-images" id=_id}}</span>
+						</div>
+						<div class="email-wrapper col-md-3">
+							<span class="head">Remark</span>
+							<button class="btn btn-primary">Enter Remark</button>
+						</div>
+					</div>
+				</div>
+			</div>
+	{{/if}}
+	{{/each}}
+</div>
 </Template>
