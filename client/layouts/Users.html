@@ -1,0 +1,24 @@
+<Template name = "Users">
+	<div class="container">
+		<div class="row">
+			<div class="user-wrapper">
+				<table>
+					<tr>
+						<th>User Id</th>
+						<th>Email</th>
+						<th>Presents</th>
+					</tr>
+
+					{{#each user}}
+				
+					<tr>
+						<td>{{profile.firstname}}</td>	
+						<td>{{useremail}}</td>
+					</tr>
+					{{/each}}
+
+				</table>
+			</div>	
+		</div>	
+	</div>
+</Template>

@@ -2,8 +2,8 @@
 //code for login redirects//////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 
-	Accounts.onLogin(function(){
-		FlowRouter.go('dashboard');
+	Accounts.onLogin(function(){		
+			FlowRouter.go('dashboard');
 		$('.modal-backdrop').remove();
 	});
 	
@@ -29,7 +29,9 @@ FlowRouter.route('/Dashboard',{
 	name:"dashboard",
 	action()
 	{
-		BlazeLayout.render('Mainlayout');
+		BlazeLayout.render('MainLayout',{
+				main : 'Dashboard'
+		});
 	}
 });
 
@@ -39,6 +41,22 @@ FlowRouter.route('/Instructor',{
 	{
 		BlazeLayout.render('MainLayout',{
 			
+		});
+	}
+});
+
+
+var adminRoutes = FlowRouter.group({
+	prefix: '/admin',
+	name:'admin'
+});
+
+adminRoutes.route('/users',{
+	name:"users",
+	action()
+	{
+		BlazeLayout.render('MainLayout',{
+			main:'Users'
 		});
 	}
 });
