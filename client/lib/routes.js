@@ -2,11 +2,11 @@
 //code for login redirects//////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 
-	Accounts.onLogin(function(){		
+	Accounts.onLogin(function(){
 			FlowRouter.go('dashboard');
 		$('.modal-backdrop').remove();
 	});
-	
+
 	Accounts.onLogout(function(){
 		FlowRouter.go('home')
 	});
@@ -18,10 +18,15 @@
 FlowRouter.route('/',{
 	name:'home',
 	action ()
-	{	
+	{
 		if(Meteor.userId())
+		{
 			FlowRouter.go('Dashboard');
-		BlazeLayout.render('Home');
+		}
+		else {
+				BlazeLayout.render('Home');
+		}
+
 	}
 });
 
@@ -40,7 +45,7 @@ FlowRouter.route('/Instructor',{
 	action()
 	{
 		BlazeLayout.render('MainLayout',{
-			
+
 		});
 	}
 });

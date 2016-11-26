@@ -1,15 +1,25 @@
 <Template name="Dashboard">
-	
+
 		<div class="container dashboard">
 			<div class="row">
-				<div class="dashboard-wrapper">
-					<div class="content-wrapper">
-						<img src="" class="img-resposive">
-						<p>Enter a Class</p>
-					
+				<div class="col-md-4 col-md-offset-1">
+					<div class="dashboard-wrapper">
+						<div class="content-wrapper">
+							<img src="" class="img-resposive">
+							<p>Enter a Class</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-md-offset-1">
+					<div class="dashboard-wrapper js-create-class">
+						<div class="content-wrapper">
+							<img src="" class="img-resposive">
+							<p>Create a Class</p>
+						</div>
 					</div>
 				</div>
 			</div>
+			{{> Createclass}}
 		</div>
-	
+
 </Template>

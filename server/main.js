@@ -1,18 +1,4 @@
-var mySubmitFunc = function(error, state){
-  if (!error) {
-    if (state === "signIn") {
-      // Successfully logged in
-      	if(Roles.userIsInRole(this._id, 'admin'))
-			{
-				FlowRouter.go('users');
-			}
-    }
-    if (state === "signUp") {
-      // Successfully registered
-      // ...
-    }
-  }
-};
+
 
 
 var postSignUp = function(userId, info){
@@ -23,7 +9,30 @@ var postSignUp = function(userId, info){
 
 
 AccountsTemplates.configure({
-	onSubmitHook: mySubmitFunc,
+
 	postSignUpHook: postSignUp
-	 
+
+});
+
+
+import { Meteor } from 'meteor/meteor';
+
+Meteor.startup(() => {
+  if(Seats.find().count() == 0)
+	  {
+		  for(var j = 10  ; j >= 1 ; j--)
+			  {
+				  for(var i=65 ; i < 75 ; i++)
+					  {
+									Seats.insert({
+										row:String.fromCharCode(i),
+										col: j,
+										status: "Available",
+										user: null
+									});
+
+
+					  }
+			  }
+	  }
 });

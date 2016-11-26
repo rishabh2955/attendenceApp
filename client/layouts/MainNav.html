@@ -1,27 +1,29 @@
 <Template name="MainNav">
 	<div class="wrapper">
 		<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button>
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-		  {{#if isInRole 'instructor'}}
-		  <li><a href="/admin/users"><i class="fa fa-user"></i>Students</a></li>
-		  {{/if}}
-		  <li><a href="#" class="logout">
-			  <i class="glyphicon glyphicon-log-out"></i>Logout</a>
-		  </li>
-		
-      </ul>
-    </div>
-  </div>
-</nav>
+		  <div class="container-fluid">
+
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#">WebSiteName</a>
+		    </div>
+
+		    <div class="collapse navbar-collapse" id="myNavbar">
+		      <ul class="nav navbar-nav navbar-right">
+						<li><a href="/Dashboard"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+						{{#if isInRole 'instructor'}}
+					  	<li><a href="/admin/users"><i class="fa fa-user"></i>Students</a></li>
+					  {{/if}}
+					  <li><a href="#" class="logout">
+						  <i class="glyphicon glyphicon-log-out"></i>Logout</a>
+					  </li>
+					</ul>
+		    </div>
+		  </div>
+		</nav>
 	</div>
 </Template>
