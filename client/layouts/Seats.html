@@ -1,0 +1,11 @@
+<template name="seats">
+	<ul class="seat">
+		{{#each seats}}
+			{{#if isBooked status}} 
+			<li class="seat-cell booked" id="_id">{{row}}{{col}}</li>
+			{{else}}
+			<li class="seat-cell js-set-seat" id="_id">{{row}}{{col}}</li>
+			{{/if}}
+		{{/ each}}
+	</ul>
+</template>
