@@ -65,5 +65,15 @@ adminRoutes.route('/users',{
 		});
 	}
 });
+FlowRouter.route('/Class',{
+	name:"class",
+	action()
+	{
+		BlazeLayout.render('MainLayout',{
+			main:"Enterclass"
+		});
+	}
+})
+
 //Routing Ends /////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////

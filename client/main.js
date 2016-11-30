@@ -40,6 +40,17 @@ Template.Users.helpers({
 Template.Dashboard.events({
 		'click .js-create-class':function(event){
 			$('#mymodal').modal('show');
+		},
+		'submit .js-enter-class':function(event){
+			var class_id = event.target.class_id.value;
+
+			if(Class.findOne({'class_id':class_id}) && Meteor.userId())
+			{
+				console.log(class_id);
+				FlowRouter.go('class');
+				return false
+			}
+			return false
 		}
 });
 Template.Createclass.events({
@@ -55,7 +66,8 @@ Template.Createclass.events({
 					class_id:class_id,
 					subject:subject,
 					createdOn : new Date(),
-					username: Meteor.user()._id
+					username: Meteor.user()._id,
+					Enrolled: []
 				});
 		}
 
@@ -76,7 +88,7 @@ Template.Createclass.events({
 Template.seats.helpers({
 	seats:function()
 	{
-		return Seats.find();
+		return Seats.find({},{sort:[["col","desc"],["row":"desc"]]});
 	},
 	isBooked:function(status)
 	{
@@ -89,28 +101,33 @@ Template.seats.helpers({
 Template.seats.events({
 	'click .js-set-seat':function(event)
 	{
+		if((Accounts.user().roles[1] = 'student'))
+		{
 		var User = Meteor.user();
-		if(Seats.findOne({'user' :User}))
+		/*if(Seats.findOne({'user' :User}))
 			{
 				alert("proxies are not allowed");
 				console.log(Seats.findOne({'user' :User } ));
 			}
+
 		else
-			{
+			{*/
 		$(event.target).css("background","green");
 		var seat_id =  this._id;
 		console.log(seat_id);
 		Seats.update({_id: seat_id},{$set:{status:"booked",user:User}});
-			}
-	}
-})
+//	}
+}
+}
+
+});
 
 
 
 Template.Seats_Admin.helpers({
 	seats:function()
 	{
-		return Seats.find();
+		return Seats.find({}, {sort:[["col","asc"],["row":"asc"]]});
 	},
 	isBooked:function(status)
 	{

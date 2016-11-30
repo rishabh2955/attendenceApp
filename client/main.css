@@ -173,3 +173,75 @@ li > a > i
 /*##############################################
 #############Dashboard Instructor#############
 ##############################################*/
+
+/* CSS declarations go here */
+.seat
+{
+	width:60%;
+	padding:0;
+}
+.seat .seat-cell
+{
+	display:inline-block;
+	text-decoration: none;
+	width:9%;
+	border: 1px solid red;
+	margin-left:0;
+}
+
+.booked
+{
+	background:green;
+}
+
+#login-buttons .login-button:hover, .accounts-dialog .login-button:hover
+{
+	background: #ffffff;
+}
+#login-buttons .login-button, .accounts-dialog .login-button
+{
+	background:transparent;
+	color:#3e3e3e;
+	border:none;
+	padding-top:1em;
+}
+#login-buttons #signup-link
+{
+	float:none;
+}
+/********************************************************************* LOGIN STARTS
+*******************************************************************/
+
+#login-dropdown-list {
+    position: absolute !important;
+    top:1em;
+	left:auto;
+    right: 3em !important;
+}
+.accounts-dialog
+{
+	width:150px;
+}
+
+#login-buttons .login-close-text
+{
+	float:right;
+}
+
+/********************************************************************* LOGIN ENDS
+*******************************************************************/
+/*********************************************************************  MAIN NAVIGATION *******************************************************************/
+.navbar
+{
+	margin-bottom:0px;
+}
+/*********************************************************************   MAIN NAVIGATION *******************************************************************/
+
+
+
+
+main
+{
+	padding-left:200px;
+	padding-top:20px;
+}

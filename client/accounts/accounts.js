@@ -18,13 +18,7 @@ AccountsTemplates.addFields([
 			{
 				text:'Student',
 				value:'student'
-			},
-			{
-				text:'Admin',
-				value:'admin'
 			}
 		]
 	 }
 ]);
-
-
