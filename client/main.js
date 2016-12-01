@@ -15,6 +15,7 @@ Template.MainNav.events({
 #######################################################*/
 
 
+
 Template.Users.onCreated(function(){
 	this.autorun(()=> {
 		this.subscribe('allUsers');
@@ -25,7 +26,7 @@ Template.Users.helpers({
 	user: function(){
 		return Meteor.users.find();
 	},
-	userEmail:function(){
+	userEmail:function(user){
 		return this.emails[0].address;
 	},
 	student:function(){
@@ -136,9 +137,10 @@ Template.Seats_Admin.helpers({
 	}
 
 });
+
 Template.Seats_Admin.events({
 	'click .js-end-class':function(){
-		Seats.update({status : booked},{$set:{status:"Available", user: null}});
+		Meteor.call('endClass');
 		FlowRouter.go('users');
 	}
 });

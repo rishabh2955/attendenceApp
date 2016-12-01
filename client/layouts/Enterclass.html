@@ -1,5 +1,5 @@
 <Template name="Enterclass">
-{{#if isInRole instructor}}
+{{#if isInRole 'instructor'}}
   {{> Seats_Admin}}
 {{else}}
   {{> seats}}
