@@ -27,7 +27,7 @@ Template.Users.helpers({
 		return Meteor.users.find();
 	},
 	userEmail:function(user){
-		return this.emails[0].address;
+		return this	.emails[0].address;
 	},
 	student:function(){
 		return this.profile.profession === 'student';
@@ -128,7 +128,7 @@ Template.seats.events({
 Template.Seats_Admin.helpers({
 	seats:function()
 	{
-		return Seats.find({}, {sort:[["col","asc"],["row":"asc"]]});
+		return Seats.find({}, {sort:[["col","desc"],["row":"desc"]]});
 	},
 	isBooked:function(status)
 	{

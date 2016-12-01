@@ -1,5 +1,5 @@
 Meteor.methods({
   'endClass':function(){
-    Seats.update({},{$set: {'status':'Available','users':null}},{multi:true});
+    Seats.update({},{$set: {'status':'Available','user':null}},{multi:true});
   }
 });
