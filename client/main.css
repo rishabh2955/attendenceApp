@@ -242,6 +242,6 @@ li > a > i
 
 main
 {
-	padding-left:200px;
+	padding:auto;
 	padding-top:20px;
 }
