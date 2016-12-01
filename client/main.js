@@ -104,14 +104,14 @@ Template.seats.events({
 		if((Accounts.user().roles[1] = 'student'))
 		{
 		var User = Meteor.user();
-		/*if(Seats.findOne({'user' :User}))
+		if(Seats.findOne({'user' :User}))
 			{
 				alert("proxies are not allowed");
 				console.log(Seats.findOne({'user' :User } ));
 			}
 
 		else
-			{*/
+			{
 		$(event.target).css("background","green");
 		var seat_id =  this._id;
 		console.log(seat_id);
