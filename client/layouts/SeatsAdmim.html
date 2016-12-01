@@ -1,0 +1,11 @@
+<template name="Seats_Admin">
+	<ul class="seat">
+		{{#each seats}}
+			{{#if isBooked status}} 
+			<li class="seat-cell js-show-user booked" id="_id">{{row}}{{col}}</li>
+			{{else}}
+			<li class="seat-cell js-show-user" id="_id">{{row}}{{col}}</li>
+			{{/if}}
+		{{/ each}}
+	</ul>
+</template>
