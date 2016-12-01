@@ -136,6 +136,12 @@ Template.Seats_Admin.helpers({
 	}
 
 });
+Template.Seats_Admin.events({
+	'click .js-end-class':function(){
+		Seats.update({status : booked},{$set:{status:"Available", user: null}});
+		FlowRouter.go('users');
+	}
+});
 /*#######################################################
 ############# Create class functionality END ############
 #######################################################*/
