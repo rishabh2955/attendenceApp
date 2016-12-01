@@ -116,11 +116,11 @@ Template.seats.events({
 		var seat_id =  this._id;
 		console.log(seat_id);
 		Seats.update({_id: seat_id},{$set:{status:"booked",user:User}});
-//	}
-}
-}
+	}
+	}
+	}
 
-});
+	});
 
 
 
