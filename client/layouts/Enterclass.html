@@ -1,7 +1,17 @@
 <Template name="Enterclass">
-{{#if isInRole 'instructor'}}
-  {{> Seats_Admin}}
-{{else}}
-  {{> seats}}
-{{/if}}
+  <div class="row">
+    <div class="col-md-10">
+      {{#if isInRole 'instructor'}}
+        {{> Seats_Admin}}
+      {{else}}
+        {{> seats}}
+      {{/if}}
+    </div>
+    <div class="col-md-2">
+      <div class="Details-wrapper">
+        
+      </div>
+    </div>
+  </div>
+
 </Template>
